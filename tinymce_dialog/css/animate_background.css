@@ -1,0 +1,33 @@
+@charset "utf-8";
+.animate_background
+{
+    height:32px;
+    -webkit-animation-name: animation;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;    
+    -webkit-animation-play-state: running;
+    
+    animation-name: animation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;    
+    animation-play-state: running;
+    background-color: white;
+}
+
+@-webkit-keyframes animation {
+    0%     {background-color:white;}
+    25.0%  {background-color:hsl(16, 71.78%, 85%);}
+    50.0%  {background-color:white;}
+    75.0%  {background-color:#D7DADD;}
+    100.0%  {background-color:white;}
+}
+
+@keyframes animation {
+    0%     {background-color:white;}
+    25.0%  {background-color:hsl(16, 71.78%, 85%);}
+    50.0%  {background-color:white;}
+    75.0%  {background-color:#fae4a2;}
+    100.0%  {background-color:white;}
+}

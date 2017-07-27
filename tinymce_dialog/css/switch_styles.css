@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+.onoffswitch {
+    position: relative; 
+	/* The width below is critical and must be in pixels with
+	   the same vaue as td:nth-child(2) in tinymce_dialog.css */
+	width: 90px; 
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    /*height: 30px;*/
+    padding: 0;
+    /*line-height: 30px;*/
+    font-size: 10px;
+    color: white; font-family:
+    Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+	text-align:center !important;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 0px;
+    /*background-color: #118866;*/
+    /*background-color: #FFDD76;*/
+    background-color: #FF9F76;
+    color: #000;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 0px;
+    /*background-color: #881133;*/
+    /*background-color: #FF9F76;*/
+    background-color: #fff;
+    color: #000;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: none; width: 0px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

@@ -1,0 +1,126 @@
+@charset "utf-8";
+section {
+	position: relative;
+	border: 1px solid #000;
+	padding-top: 37px;
+	background:#0085ba ;
+}
+section.positioned {
+	position: absolute;
+	top:100px;
+	left:100px;
+	width:800px;
+	box-shadow: 0 0 15px #333;
+}
+.container {
+	overflow-y: auto;
+	height: 200px;
+}
+.ctable {
+	border-spacing: 0;
+	width:100%;
+}
+.ctd + .ctd {
+	border-left:1px solid #0085ba;
+}
+.ctd, .cth {
+	border-bottom:1px solid #0085ba;
+	background: #ddd;
+	color: #000;
+	padding: 10px 25px;
+	text-align:center;
+}
+.cth {
+	height: 0;
+	line-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	color: transparent;
+	border: none;
+	white-space: nowrap;
+}
+.cth div{
+	position: absolute;
+	background: transparent;
+	color: #fff;
+	padding: 9px 25px;
+	top: 0;
+	margin-left: -25px;
+	line-height: normal;
+	border-left: 1px solid #0099fa;
+	font-family:Verdana, Geneva, sans-serif;
+	text-shadow: -.5px -.5px 0 #555,.5px -.5px 0 #555,-.5px .5px 0 #555,.5px .5px 0 #555;  
+}
+.cth:first-child div{
+	border: none;
+}
+.wallpapered {
+    position: relative;
+}
+.wallpapered .violations_section {
+    width: 100%;
+    height: inherit;
+}
+/*
+.wallpapered .background {
+    position: absolute;
+	font-size:11px;
+    top: 35px;
+    left: 10px;
+    color: #ddd;
+	font-family:Verdana, Geneva, sans-serif;
+	z-index:1;
+}
+*/
+.good_http{
+	color:green;
+}.bad_http{
+	color:red;
+	background-color:yellow;
+}
+.table_column_1{
+	width: 14.2857%;
+}
+.table_column_2{
+	width: 14.2857%;
+}
+.table_column_3{
+	width: 14.2857%;
+}
+.table_column_4{
+	width: 14.2857%;
+}
+.table_column_5{
+	width: 14.2857%;
+}
+.table_column_6{
+	width: 14.2857%;
+}
+.table_column_7{
+	width: 14.2857%;
+}
+.textarea_domains{
+	resize: none;
+	overflow: auto
+}
+.h2_violations{
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 10px
+}
+.span_red{
+	color: red;
+	background-color:yellow;
+}
+h2{
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+}
+tbody{
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+}
+.header{
+	text-align:center;
+}
+

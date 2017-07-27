@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Disable browser caching of dialog window -->
+		<meta charset="UTF-8">
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="no-cache" />
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+		<script type="text/javascript" src="../js/youtube.js"></script>
+		<script type="text/javascript" src="../js/vimeo.js"></script>
+		<script type="text/javascript" src="../js/brightcove.js"></script>
+		<script type="text/javascript" src="../js/dailymotion.js"></script>
+		<script type="text/javascript" src="../js/custom.js"></script>
+		<script type="text/javascript" src="../js/html.js"></script>
+		<script type="text/javascript" src="../js/load_events_call_last.js"></script> <!-- Must be the last .js script called!!! -->
+        <link href="../css/tinymce_dialog.css" rel="stylesheet" type="text/css" />
+        <link href="../css/button_styles.css" rel="stylesheet" type="text/css" />
+        <link href="../css/switch_styles.css" rel="stylesheet" type="text/css" />
+        <link href="../css/dropdown_styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+		<form>
+            <div class="page">
+                <div class="items">
+                    <div class="item">
+                        <h3 id="collapsible_youtube" class="button blue skew"><img src="../../assets/youtube_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">Youtube (Video)</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td title="You can paste the Youtube ID (i.e. o_3u41KI57E), Single Video URL or Playlist URL. Do not include embed tags.">YouTube URL: Paste ID, Video or Playlist URL (no embed tags)</td>
+                                        <td title="You can paste the Youtube ID (i.e. o_3u41KI57E), Single Video URL or Playlist URL. Do not include embed tags." class="value"><input class="mandatory textbox" id="youtube_id" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="youtube_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="youtube_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="youtube_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Auto Play</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="youtube_autoplay" class="onoffswitch-checkbox" id="youtube_autoplay">
+                                                <label class="onoffswitch-label" for="youtube_autoplay">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Allow Full Screen</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="youtube_fullscreen" class="onoffswitch-checkbox" id="youtube_fullscreen" checked>
+                                                <label class="onoffswitch-label" for="youtube_fullscreen">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Title, Playlist Dropdown &amp; Social Media Sharing</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="youtube_showinfo" class="onoffswitch-checkbox" id="youtube_showinfo" checked>
+                                                <label class="onoffswitch-label" for="youtube_showinfo">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Related Videos</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="youtube_showrelated" class="onoffswitch-checkbox" id="youtube_showrelated">
+                                                <label class="onoffswitch-label" for="youtube_showrelated">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Annotations</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="youtube_showannotations" class="onoffswitch-checkbox" id="youtube_showannotations" checked>
+                                                <label class="onoffswitch-label" for="youtube_showannotations">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspect Ratio</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">16:9</div>
+                                                <div class="dropdown_content" id="youtube_aspectratio">
+                                                    <div class="select_options2 dropdown_item active">16:9</div>
+                                                    <div class="select_options2 dropdown_item">4:3</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Video quality</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">720p</div>
+                                                <div class="dropdown_content" id="youtube_videoquality">
+                                                    <div class="select_options2 dropdown_item">240p</div>
+                                                    <div class="select_options2 dropdown_item">360p</div>
+                                                    <div class="select_options2 dropdown_item">480p</div>
+                                                    <div class="select_options2 dropdown_item active">720p</div>
+                                                    <div class="select_options2 dropdown_item">1080p</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start Video ? seconds in:</td>
+                                        <td class="value"><input class="textbox_center" id="youtube_start" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End Video at ? seconds in:</td>
+                                        <td class="value"><input class="textbox_center" id="youtube_end" type="text"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 id="collapsible_vimeo" class="button blue skew"><img src="../../assets/vimeo_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">Vimeo (Video)</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td title="You can paste the Vimeo ID (i.e. 137262590) or Single Video URL. Do not include embed tags.">Vimeo  URL: Paste ID or Video URL (no embed tags)</td>
+                                        <td title="You can paste the Vimeo ID (i.e. 137262590) or Single Video URL. Do not include embed tags." class="value"><input class="mandatory textbox" id="vimeo_id" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="vimeo_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="vimeo_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="vimeo_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Auto Play</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_autoplay" class="onoffswitch-checkbox" id="vimeo_autoplay">
+                                                <label class="onoffswitch-label" for="vimeo_autoplay">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Title</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_showtitle" class="onoffswitch-checkbox" id="vimeo_showtitle" checked >
+                                                <label class="onoffswitch-label" for="vimeo_showtitle">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Full Screen</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_fullscreen" class="onoffswitch-checkbox" id="vimeo_fullscreen" checked >
+                                                <label class="onoffswitch-label" for="vimeo_fullscreen">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Portrait Icon</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_showportraiticon" class="onoffswitch-checkbox" id="vimeo_showportraiticon" checked >
+                                                <label class="onoffswitch-label" for="vimeo_showportraiticon">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Byline</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_showbyline" class="onoffswitch-checkbox" id="vimeo_showbyline" checked >
+                                                <label class="onoffswitch-label" for="vimeo_showbyline">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspect Ratio</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">16:9</div>
+                                                <div class="dropdown_content" id="vimeo_aspectratio">
+                                                    <div class="select_options2 dropdown_item active">16:9</div>
+                                                    <div class="select_options2 dropdown_item">4:3</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loop</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="vimeo_loop" class="onoffswitch-checkbox" id="vimeo_loop">
+                                                <label class="onoffswitch-label" for="vimeo_loop">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 id="collapsible_brightcove" class="button blue skew"><img src="../../assets/brightcove_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">Brightcove (Video)</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td title="Brightcove Video URL (no embed tags)">Brightcove Video URL (no embed tags)</td>
+                                        <td title="Brightcove Video URL (no embed tags)" class="value"><input class="mandatory textbox" id="brightcove_id" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="brightcove_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="brightcove_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="brightcove_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Auto Play</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="brightcove_autoplay" class="onoffswitch-checkbox" id="brightcove_autoplay">
+                                                <label class="onoffswitch-label" for="brightcove_autoplay">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Full Screen</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="brightcove_fullscreen" class="onoffswitch-checkbox" id="brightcove_fullscreen" checked >
+                                                <label class="onoffswitch-label" for="brightcove_fullscreen">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspect Ratio</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">16:9</div>
+                                                <div class="dropdown_content" id="brightcove_aspectratio">
+                                                    <div class="select_options2 dropdown_item active">16:9</div>
+                                                    <div class="select_options2 dropdown_item">4:3</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 id="collapsible_dailymotion" class="button blue skew"><img src="../../assets/dailymotion_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">Dailymotion (Video)</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dailymotion  URL: no tags</td>
+                                        <td class="value"><input class="mandatory textbox" id="dailymotion_id" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="dailymotion_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="dailymotion_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="dailymotion_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Auto Play</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_autoplay" class="onoffswitch-checkbox" id="dailymotion_autoplay">
+                                                <label class="onoffswitch-label" for="dailymotion_autoplay">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Video Title</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_videotitle" class="onoffswitch-checkbox" id="dailymotion_videotitle" checked >
+                                                <label class="onoffswitch-label" for="dailymotion_videotitle">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Show Related Videos</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_showrelated" class="onoffswitch-checkbox" id="dailymotion_showrelated">
+                                                <label class="onoffswitch-label" for="dailymotion_showrelated">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Player Logo</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_playerlogo" class="onoffswitch-checkbox" id="dailymotion_playerlogo">
+                                                <label class="onoffswitch-label" for="dailymotion_playerlogo">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Share Buton</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_sharebuton" class="onoffswitch-checkbox" id="dailymotion_sharebuton" checked >
+                                                <label class="onoffswitch-label" for="dailymotion_sharebuton">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Player Type</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">Flash</div>
+                                                <div class="dropdown_content" id="dailymotion_playertype">
+                                                    <div class="select_options2 dropdown_item active">Flash</div>
+                                                    <div class="select_options2 dropdown_item">HTML5</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Player Bar</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_playerbar" class="onoffswitch-checkbox" id="dailymotion_playerbar" checked >
+                                                <label class="onoffswitch-label" for="dailymotion_playerbar">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Player Hide</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_playerhide" class="onoffswitch-checkbox" id="dailymotion_playerhide">
+                                                <label class="onoffswitch-label" for="dailymotion_playerhide">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Video quality</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">720p</div>
+                                                <div class="dropdown_content" id="dailymotion_videoquality">
+                                                    <div class="select_options2 dropdown_item">240p</div>
+                                                    <div class="select_options2 dropdown_item">360p</div>
+                                                    <div class="select_options2 dropdown_item">480p</div>
+                                                    <div class="select_options2 dropdown_item active">720p</div>
+                                                    <div class="select_options2 dropdown_item">1080p</div>
+                                                    <div class="select_options2 dropdown_item">1440p</div>
+                                                    <div class="select_options2 dropdown_item">2160p</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Allow Full Screen</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="dailymotion_fullscreen" class="onoffswitch-checkbox" id="dailymotion_fullscreen" checked >
+                                                <label class="onoffswitch-label" for="dailymotion_fullscreen">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspect Ratio</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">16:9</div>
+                                                <div class="dropdown_content" id="dailymotion_aspectratio">
+                                                    <div class="select_options2 dropdown_item active">16:9</div>
+                                                    <div class="select_options2 dropdown_item">4:3</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 id="collapsible_custom" class="button blue skew"><img src="../../assets/icon_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">Other Video Providers</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Custom  URL: no tags</td>
+                                        <td class="value"><input class="mandatory textbox" id="custom_url" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="custom_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="custom_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="custom_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Allow Scrolling</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="custom_scrolling" class="onoffswitch-checkbox" id="custom_scrolling">
+                                                <label class="onoffswitch-label" for="custom_scrolling">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Width (100% in most cases):</td>
+                                        <td class="value"><input  class="mandatory textbox center_text" id="custom_width" type="text" value="100%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Height in Pixels (810px for PDF):</td>
+                                        <td class="value"><input  class="mandatory textbox center_text" id="custom_height" type="text" value="700px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Allow Full Screen</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="custom_fullscreen" class="onoffswitch-checkbox" id="custom_fullscreen" checked >
+                                                <label class="onoffswitch-label" for="custom_fullscreen">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspect Ratio</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">16:9</div>
+                                                <div class="dropdown_content" id="custom_aspectratio">
+                                                    <div class="select_options2 dropdown_item active">16:9</div>
+                                                    <div class="select_options2 dropdown_item">4:3</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3 id="collapsible_html" class="button blue skew"><img src="../../assets/icon_20.png" alt="Khloe" height="20" width="20">&nbsp;<span class="top_text">HTML Web Page</span></h3>
+                        <div class="content">
+                            <table class="ui-widget">
+                                <colgroup>
+                                    <col width="80%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Parameter Description</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>HTML Web Page  URL: no tags</td>
+                                        <td class="value"><input class="mandatory textbox" id="html_url" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protocol</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">HTTPS</div>
+                                                <div class="dropdown_content" id="html_protocol">
+                                                    <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                    <div class="select_options2 dropdown_item">HTTP</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border</td>
+                                        <td class="value">
+                                            <div class="dropdown">
+                                                <div class="select_options2 dropdown_button">None</div>
+                                                <div class="dropdown_content" id="html_border">
+                                                    <div class="select_options2 dropdown_item active">None</div>
+                                                    <div class="select_options2 dropdown_item">Tiny</div>
+                                                    <div class="select_options2 dropdown_item">Small</div>
+                                                    <div class="select_options2 dropdown_item">Medium</div>
+                                                    <div class="select_options2 dropdown_item">Large</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frame Border Color</td>
+                                        <td class="value"><input class="mandatory colorbox_center" id="html_bordercolor" type="color" value="#00ff00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Allow Scrolling</td>
+                                        <td class="value">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="html_scrolling" class="onoffswitch-checkbox" id="html_scrolling">
+                                                <label class="onoffswitch-label" for="html_scrolling">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Width (100% in most cases):</td>
+                                        <td class="value"><input  class="mandatory textbox center_text" id="html_width" type="text" value="100%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Height in Pixels (810px for PDF):</td>
+                                        <td class="value"><input  class="mandatory textbox center_text" id="html_height" type="text" value="700px"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview_wrapper">
+                    <div class="preview_label">Shortcode Preview</div>
+                    <textarea class="preview_content force_select button blue" readonly></textarea>
+                    <!--<div class="preview_content button blue"></div>-->
+                    <div class="submit_button_wrapper">
+                        <input class="submit_button button_red_text submit skew" type="submit" value="Insert Shortcode" />
+                    </div>
+                </div>
+            </div>
+		</form>
+        
+		<script type="text/javascript">
+			// Do not move this script to an external file because it will not work!
+     
+			//**********************************
+			// To begin Debuging this html page
+			// standalone without the tinymce
+			// just comment out the next two lines
+			// of code starting with
+			// var passed_arguments and var $
+			// Remember to uncomment for production
+			//**********************************
+			// Get arguments passed to dialog.
+            var passed_arguments = top.tinymce.activeEditor.windowManager.getParams();
+            // Get JQuery passed to dialog.
+			var $ = passed_arguments.jquery;
+			//**********************************
+			// End debug comment out
+			//**********************************
+            
+			// Create a context element to the body of the dialog.
+            var jq_context = document.getElementsByTagName("body")[0];
+            // Declare YouTube Parameters Associative-Array.
+			var youtubeParameters = {};
+            // Declare Vimeo Parameters Associative-Array.
+			var vimeoParameters = {};
+            // Declare Brightcove Parameters Associative-Array.
+			var brightcoveParameters = {};
+            // Declare Dailymotion Parameters Associative-Array.
+			var dailymotionParameters = {};
+            // Declare Custom Parameters Associative-Array.
+			var customParameters = {};
+            // Declare HTML Parameters Associative-Array.
+			var htmlParameters = {};
+			// Declare varible to hold the active item's text
+			var activeItemText = '';
+			
+			//**********************************
+			// Process Item Click
+			//**********************************
+			$('.content', jq_context).hide();
+			$('h3', jq_context).on('click', function() {
+				$(this).parent().addClass('active');
+				$(this).parent().siblings().removeClass('active');
+				$(this).parent().siblings().find('.content', jq_context).hide();
+				activeItemText = $(this).find('span', jq_context).text();
+				activeItemText = $.trim(activeItemText.slice(0, activeItemText.indexOf(" "))).toLowerCase();
+				$(this).parent().find('.content', jq_context).toggle();
+				lgrriw_ClearYouTubeParameters();
+				lgrriw_ClearVimeoParameters();
+				lgrriw_ClearBrightcoveParameters();
+				lgrriw_ClearDailymotionParameters();
+				lgrriw_ClearCustomParameters();
+				lgrriw_ClearHTMLParameters();
+			});
+			
+			//**********************************
+			// Initialize the Dialog
+			//**********************************
+			lgrriw_InitializeDialog();
+
+
+			//**********************************
+			// Functions
+			//**********************************
+			function lgrriw_InitializeDialog(){
+	
+				lgrriw_ClearYouTubeParameters();
+				lgrriw_ClearVimeoParameters();
+				lgrriw_ClearBrightcoveParameters();
+				lgrriw_ClearDailymotionParameters();
+				lgrriw_ClearCustomParameters();
+				lgrriw_ClearHTMLParameters();
+			}
+			
+			function lgrriw_ClearYouTubeParameters(){
+				// Set default values
+				youtubeParameters = {};
+				youtubeParameters["youtube_protocol"] = "HTTPS"; //Default
+				youtubeParameters["bordercolor"] = "#00ff00";
+				youtubeParameters["fs"] = "1";  //Default
+				youtubeParameters["rel"] = '0'; //Default
+				youtubeParameters['iv_load_policy'] = '3'; //Default (Do Not Show)
+				PreviewEmbedCode();
+			}
+			
+			function lgrriw_ClearVimeoParameters(){
+				// Set default values
+				vimeoParameters = {};
+				vimeoParameters["vimeo_protocol"] = "HTTPS";
+				vimeoParameters["fs"] = "1";
+				PreviewEmbedCode();
+			}
+			
+			function lgrriw_ClearBrightcoveParameters(){
+				// Set default values
+				brightcoveParameters = {};
+				brightcoveParameters["brightcove_protocol"] = "HTTPS"; //Default
+				brightcoveParameters["fs"] = "1";
+				PreviewEmbedCode();
+			}
+			
+			function lgrriw_ClearDailymotionParameters(){
+				// Set default values
+				dailymotionParameters = {};
+				dailymotionParameters["dailymotion_protocol"] = "HTTPS"; //Default
+				dailymotionParameters["fs"] = "1";
+				dailymotionParameters["info"] = '0';
+				dailymotionParameters["related"] = '0';
+				dailymotionParameters["social"] = '0';
+				dailymotionParameters["logo"] = '0';
+			}
+			
+			function lgrriw_ClearCustomParameters(){
+				// Set default values
+				customParameters = {};
+				customParameters["custom_protocol"] = "HTTPS"; //Default
+				customParameters["fs"] = "1";
+				customParameters["aspectratio"] = '16:9';
+				customParameters["custom_width"] = '100%';
+				customParameters["custom_height"] = '700px';
+				//customParameters["scrolling"] = 'no';
+			}
+			
+			function lgrriw_ClearHTMLParameters(){
+				// Set default values
+				htmlParameters = {};
+				htmlParameters["html_protocol"] = "HTTPS"; //Default
+				htmlParameters["html_width"] = '100%';
+				htmlParameters["html_height"] = '700px';
+				htmlParameters["scrolling"] = 'no';
+			}
+			
+			//**********************************
+			// Preview Select All on Focus
+			// and allow smaller selection
+			// after focus
+			//**********************************
+			$('.preview_content', jq_context).focus(function(){
+				$(this).on("mouseup.a keyup.a", function(e){      
+					$(this).off("mouseup.a keyup.a").select();
+				});
+			});
+
+			//**********************************
+			// Preview
+			//**********************************
+			function PreviewEmbedCode(){
+				var headingText = activeItemText;
+				$('.preview_content', jq_context).text(''); //Clear whatever is there
+				// Create preview embed code based on current active accordion
+				//alert(headingText);
+				switch (headingText) { 
+					case 'youtube': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( typeof youtubeParameters['youtube_id'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						lgrriw_ResolveDefaultYoutubeSettings( youtubeParameters );
+						break;
+					case 'vimeo': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( typeof vimeoParameters['vimeo_id'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						lgrriw_ResolveDefaultVimeoSettings( vimeoParameters );
+						break;
+					case 'brightcove': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( brightcoveParameters['brightcove_id'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						lgrriw_ResolveDefaultBrightcoveSettings( brightcoveParameters );
+						break;		
+					case 'dailymotion': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( typeof dailymotionParameters['dailymotion_id'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						lgrriw_ResolveDefaultDailymotionSettings( dailymotionParameters );
+						break;
+					case 'other': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( typeof customParameters['custom_url'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						//alert('hello 2');
+						lgrriw_ResolveDefaultCustomSettings( customParameters );
+						break;
+					case 'html': 
+						// Bail out if no ID has been entered yet for the current accordion
+						if( typeof htmlParameters['html_url'] == 'undefined' ){
+							return false;
+						}
+						// Finalize Embed Code
+						//alert('hello 2');
+						lgrriw_ResolveDefaultHTMLSettings( htmlParameters );
+						break;
+				}
+			}
+
+			//**********************************
+			// Submit
+			//**********************************
+            // Insert the shortcode when submit is clicked.
+            $("form", jq_context).submit(function(event) {
+					event.preventDefault();
+                    // Construct the shortcode
+                    var shortcode = $( '.preview_content', jq_context ).text();
+					// Insert the shortcode into the editor and close the manager
+                    passed_arguments.editor.selection.setContent(shortcode);
+                    passed_arguments.editor.windowManager.close();
+            });
+
+		// Prototype replaceAll function for debuging
+		String.prototype.replaceAll = function(search, replacement) {
+			var target = this;
+			return target.replace(new RegExp(search, 'g'), replacement);
+		};			
+
+
+
+		</script>
+    </body>
+</html>

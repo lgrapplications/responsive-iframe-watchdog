@@ -1,0 +1,136 @@
+                        <div class="item">
+                            <h3 id="collapsible_livestream" class="stripes button blue skew"><img src="../../assets/livestream_20.png" alt="livestream" height="20" width="20">&nbsp;<span class="top_text">Livestream </span></h3>
+                            <div class="content">
+                                <table>
+                                    <!--<colgroup>
+                                        <col width="50%">
+                                        <col width="0px">
+                                        <col width="50%">
+                                        <col width="0px">
+                                    </colgroup>-->
+                                    <tbody>
+                                        <tr>
+                                            <td title="You can paste the livestream ID (i.e. 137262590) or Single Video URL. Do not include embed tags.">Livestream  URL: Paste ID or Video URL</td>
+                                            <td colspan="3" title="You can paste the Livestream ID (i.e. 137262590) or Single Video URL. Do not include embed tags." class="value"><input placeholder="type or paste id or video url" class="mandatory textbox" id="livestream_id" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Protocol:</td>
+                                            <td class="value">
+                                                <div class="dropdown">
+                                                    <div class="select_options2 dropdown_button">HTTPS</div>
+                                                    <div class="dropdown_content" id="livestream_protocol">
+                                                        <div class="select_options2 dropdown_item active">HTTPS</div>
+                                                        <div class="select_options2 dropdown_item">HTTP</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Frame Border:</td>
+                                            <td class="value">
+                                                <div class="dropdown">
+                                                    <div class="select_options2 dropdown_button">None</div>
+                                                    <div class="dropdown_content" id="livestream_border">
+                                                        <div class="select_options2 dropdown_item active">None</div>
+                                                        <div class="select_options2 dropdown_item">Tiny</div>
+                                                        <div class="select_options2 dropdown_item">Small</div>
+                                                        <div class="select_options2 dropdown_item">Medium</div>
+                                                        <div class="select_options2 dropdown_item">Large</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Frame Border Color:</td>
+                                            <td class="value"><input class="colorbox_center" id="livestream_bordercolor" type="color" value="#00ff00"></td>
+                                            <td>Auto Play:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_autoplay" class="onoffswitch-checkbox" id="livestream_autoplay">
+                                                    <label class="onoffswitch-label" for="livestream_autoplay">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Show Title:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_showtitle" class="onoffswitch-checkbox" id="livestream_showtitle" checked >
+                                                    <label class="onoffswitch-label" for="livestream_showtitle">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Full Screen:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_fullscreen" class="onoffswitch-checkbox" id="livestream_fullscreen" checked >
+                                                    <label class="onoffswitch-label" for="livestream_fullscreen">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Show Portrait Icon:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_showportraiticon" class="onoffswitch-checkbox" id="livestream_showportraiticon" checked >
+                                                    <label class="onoffswitch-label" for="livestream_showportraiticon">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>Show Byline:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_showbyline" class="onoffswitch-checkbox" id="livestream_showbyline" checked >
+                                                    <label class="onoffswitch-label" for="livestream_showbyline">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aspect Ratio:</td>
+                                            <td class="value">
+                                                <div class="dropdown">
+                                                    <div class="select_options2 dropdown_button">16:9</div>
+                                                    <div class="dropdown_content" id="livestream_aspectratio">
+                                                        <div class="select_options2 dropdown_item active">16:9</div>
+                                                        <div class="select_options2 dropdown_item">4:3</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Loop:</td>
+                                            <td class="value">
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="livestream_loop" class="onoffswitch-checkbox" id="livestream_loop">
+                                                    <label class="onoffswitch-label" for="livestream_loop">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
